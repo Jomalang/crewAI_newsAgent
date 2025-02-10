@@ -1,0 +1,18 @@
+kor_eng_translation_task:
+  agent: kor_eng_translator_agent
+  description: >
+    Translate the given text into korean or english.
+
+news_research_task:
+  agent: news_research_agent
+  description: >
+    Gather information from the web on the given {topic}. The information should be collected starting from the most recent updates.
+    Credible sources should be prioritized.
+    The information should be collected in a structured manner.
+
+news_reporting_task:
+  agent: news_reporting_agent
+  description: >
+    Report the latest news on the given topic.
+    The report should be in a structured manner.
+    The report should be in the language of the given topic.
