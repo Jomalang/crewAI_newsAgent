@@ -1,9 +1,9 @@
 import os
+from YoutubeAgent.timecheck import time_check
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from crewai.project import CrewBase, agent, task, crew
 from crewai import Agent, Task, Crew, Process
-from timecheck import time_check
 
 load_dotenv()
 
@@ -64,7 +64,6 @@ class NewsAgent():
             config=self.tasks_config["news_reporting_task"],
             expected_output="A report on the latest news on the given topic to korean.",
             context=[self.news_research_task(), self.kor_eng_translation_task()],
-            output_file="news_report.md"
         )
     
 
@@ -79,12 +78,13 @@ class NewsAgent():
         )
         
 @time_check
-def run():
+def run(inputs: dict):
     ai_agent = NewsAgent()
     crew_instance = ai_agent.crew()
 
-    result = crew_instance.kickoff(inputs = {"topic": "nvidia_korea"})
-    print(result)
+    result = crew_instance.kickoff(inputs = inputs)
+
+    return result
 
 if __name__ == "__main__":
     run()

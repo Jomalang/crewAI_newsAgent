@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  gap: 10px;
+}
+
+.search-container input {
+  width: 500px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+}
+
