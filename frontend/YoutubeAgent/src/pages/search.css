@@ -38,6 +38,15 @@
   border-radius: 10px;
   padding: 10px;
   line-height: 1.4;
-  border: 1px solid #ccc;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading img {
+  width: 7%;
+  height: 7%;
+}

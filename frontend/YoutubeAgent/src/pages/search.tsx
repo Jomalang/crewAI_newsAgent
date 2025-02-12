@@ -1,17 +1,26 @@
 import axios from "axios";
 import { useState } from "react";
 import "./search.css";
+import loading from "../assets/gif/loading.gif";
 
 const Search = () => {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSearch = async () => {
-    const response = await axios.post("http://localhost:8000/ask", {
-      url: search,
-    });
-    console.log(response.data);
-    setResults(response.data.result);
+    setIsLoading(true);
+    try {
+      const response = await axios.post("http://localhost:8000/ask", {
+        url: search,
+      });
+      console.log(response.data);
+      setResults(response.data.result);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +38,13 @@ const Search = () => {
       </div>
 
       <div className="results">
-        <p>{results}</p>
+        {isLoading ? (
+          <div className="loading">
+            <img src={loading} alt="loading..." />
+          </div>
+        ) : (
+          <p>{results}</p>
+        )}
       </div>
     </div>
   );
