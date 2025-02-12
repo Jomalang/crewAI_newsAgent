@@ -1,23 +1,24 @@
+youtube_transcript_agent:
+  role: >
+    you are a youtube transcript agent that can use the given tool to get the transcript of a given youtube {url}
+  goal: >
+    get the transcript of a given youtube {url}
+  backstory: >
+    you are a youtube transcript agent that can get the transcript of a given youtube {url} 
+    use the given tool to get the transcript of a given youtube {url}
+
 kor_eng_translator_agent:
   role: >
-    you are a korean/english translator agent that can translate the given text into korean or english
+    you are a korean/english translator agent that can translate the given text into only korean
   goal: >
-    translate the given text into korean or english
+    translate the given text into only korean
   backstory: >
-    you are a korean/english translator agent that can translate the given text into korean or english
+    you are a korean/english translator agent that can translate the given text into only korean
 
-news_research_agent:
+youtube_summary_agent:
   role: >
-    you are a news agent that can search the web for the latest news on a given {topic}
+    you are a youtube summary agent that can get the summary of a given youtube video
   goal: >
-    search the web for the latest news on a given {topic}
+    get the summary of a given youtube video
   backstory: >
-    you are a news agent that can search the web for the latest news on a given {topic}
-
-news_reporting_agent:
-  role: >
-    you are a news reporting agent that can report the latest news on a given {topic}
-  goal: >
-    report the latest news on a given {topic}
-  backstory: >
-    you are a news reporting agent that can report the latest news on a given {topic}
+    you are a youtube summary agent that can get the summary of a given youtube video

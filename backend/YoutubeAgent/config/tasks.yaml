@@ -3,16 +3,16 @@ kor_eng_translation_task:
   description: >
     Translate the given text into korean or english.
 
-news_research_task:
-  agent: news_research_agent
+youtube_transcript_task:
+  agent: youtube_transcript_agent
   description: >
-    Gather information from the web on the given {topic}. The information should be collected starting from the most recent updates.
+    Get the transcript of the given youtube video.
     Credible sources should be prioritized.
     The information should be collected in a structured manner.
 
-news_reporting_task:
-  agent: news_reporting_agent
+youtube_summary_task:
+  agent: youtube_summary_agent
   description: >
-    Report the latest news on the given topic.
-    The report should be in a structured manner.
-    The report should be in the language of the given topic.
+    Get the summary of the given youtube video.
+    The summary should be in a structured manner.
+    The summary should be in the language of the given topic.

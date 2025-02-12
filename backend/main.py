@@ -16,20 +16,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.get("/")
 async def read_root():
     return {"message": "Hello World"}
 
 @app.post("/ask")
 async def ask_to_agent(body: dict = Body(...)):
-    question = body["question"]
-    result = run(inputs = {"topic": question})
+    url = body["url"]
+    result = run(inputs = {"url": url})
     return {
         "result": result.raw
     }
-
-
-    
 
 

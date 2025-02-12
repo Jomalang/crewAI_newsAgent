@@ -8,7 +8,7 @@ const Search = () => {
 
   const handleSearch = async () => {
     const response = await axios.post("http://localhost:8000/ask", {
-      question: search,
+      url: search,
     });
     console.log(response.data);
     setResults(response.data.result);
